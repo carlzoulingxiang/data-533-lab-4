@@ -12,10 +12,18 @@ class CharArraySearchTool(CharArrayTools):
         CharArrayTools.__init__(self, arr)
 
     def search_min(self):
-        return min(self.arr)
+        try:
+            return min(self.arr)
+        except ValueError as ve:
+            print("Error: Invalid array!")
+            return None
 
     def search_max(self):
-        return max(self.arr)
+        try:
+            return max(self.arr)
+        except ValueError as ve:
+            print("Error: Invalid array!")
+            return None
 
     def search_key(self, target):
         """
@@ -23,8 +31,21 @@ class CharArraySearchTool(CharArrayTools):
         :param target: a character
         :return:  The index of the target, if not found return -1.
         """
-        for i in range(0, len(self.arr)):
-            if self.arr[i] == target:
-                return i
-        return -1
+        if not isinstance(target, str):
+            try:
+                raise NotCharError(target)  # user define error
+            except NotCharError as ne:
+                print("Error: Target is not a character!", ne.value)
+        else:
+            for i in range(0, len(self.arr)):
+                if self.arr[i] == target:
+                    return i
+            return -1
 
+
+class NotCharError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return repr(self.value)

@@ -43,6 +43,17 @@ class CharArrayTools(object):
 
         :param element: a character
         """
+        if isinstance(element, int):
+            try:
+                raise AppendIntegerError(element)
+            except AppendIntegerError as ae:
+                print("Error: Can not append integer to CharArrayTools!",ae.value)
         self.arr.append(element)
 
 
+class AppendIntegerError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return repr(self.value)
