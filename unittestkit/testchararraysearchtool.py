@@ -13,14 +13,16 @@ from arraytools.chararraytools.chararraysearchtool import NotCharError
 class TestCharArraySearchTool(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print("######## Start Testing The CharArraySearchTool Module ########")
+        pass
+        # print("######## Start Testing The CharArraySearchTool Module ########")
 
     @classmethod
     def tearDownClass(cls):
-        print("######## Finish Testing The CharArraySearchTool Module ########")
+        pass
+        # print("######## Finish Testing The CharArraySearchTool Module ########")
 
     def setUp(self):
-        print("Set Up: Initializing Object...")
+        # print("Set Up: Initializing Object...")
         self.t1 = CharArraySearchTool(['a', 'g', 'c', 'e', 'r', 'h'])
         self.t2 = CharArraySearchTool(['o'])
         self.t3 = CharArraySearchTool(['r', 'r', 'e', 'p', 'h'])
@@ -28,7 +30,7 @@ class TestCharArraySearchTool(unittest.TestCase):
         self.t5 = CharArraySearchTool(['a', 'a', 'a'])
 
     def tearDown(self):
-        print("Tear Down: Deleting Object...")
+        # print("Tear Down: Deleting Object...")
         self.t1 = None
         self.t2 = None
         self.t3 = None

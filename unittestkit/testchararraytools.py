@@ -12,14 +12,16 @@ from arraytools.chararraytools.chararraytools import CharArrayTools, AppendInteg
 class TestCharArrayTools(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print("######## Start Testing The CharArrayTools Module ########")
+        pass
+        # print("######## Start Testing The CharArrayTools Module ########")
 
     @classmethod
     def tearDownClass(cls):
-        print("######## Finish Testing The CharArrayTools Module ########")
+        pass
+        # print("######## Finish Testing The CharArrayTools Module ########")
 
     def setUp(self):
-        print("Set Up: Initializing Object...")
+        # print("Set Up: Initializing Object...")
         self.t1 = CharArrayTools(['a', 'g', 'c', 'e', 'r', 'h'])
         self.t2 = CharArrayTools([])
         self.t3 = CharArrayTools(['r', 'r', 'e', 'p', 'h'])
@@ -27,7 +29,7 @@ class TestCharArrayTools(unittest.TestCase):
         self.t5 = CharArrayTools(['a', 'g', 'c', 1])
 
     def tearDown(self):
-        print("Tear Down: Deleting Object...")
+        # print("Tear Down: Deleting Object...")
         self.t1 = None
         self.t2 = None
         self.t3 = None

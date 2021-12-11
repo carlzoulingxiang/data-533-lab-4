@@ -12,14 +12,16 @@ from arraytools.chararraytools.chararraysorttool import CharArraySortTool
 class TestCharArraySortTool(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print("######## Start Testing The CharArraySortTool Module ########")
+        pass
+        # print("######## Start Testing The CharArraySortTool Module ########")
 
     @classmethod
     def tearDownClass(cls):
-        print("######## Finish Testing The CharArraySortTool Module ########")
+        pass
+        # print("######## Finish Testing The CharArraySortTool Module ########")
 
     def setUp(self):
-        print("Set Up: Initializing Object...")
+        # print("Set Up: Initializing Object...")
         self.t1 = CharArraySortTool(['a', 'g', 'c', 'e', 'r', 'h'], False)
         self.t2 = CharArraySortTool(['o'])
         self.t3 = CharArraySortTool(['r', 'r', 'e', 'p', 'h'])
@@ -27,7 +29,7 @@ class TestCharArraySortTool(unittest.TestCase):
         self.t5 = CharArraySortTool(['a', 'a', 'a'])
 
     def tearDown(self):
-        print("Tear Down: Deleting Object...")
+        # print("Tear Down: Deleting Object...")
         self.t1 = None
         self.t2 = None
         self.t3 = None
