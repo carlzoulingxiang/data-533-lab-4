@@ -11,6 +11,7 @@ class TestNumArraySearchTool(unittest.TestCase):
         self.arr4 = [0, 0, 0, 0, 0, 0]
         self.arr5 = [2]
 
+
     @classmethod
     def tearDownClass(cls):
         print('teardown testNumArraySearchTool')
@@ -21,6 +22,7 @@ class TestNumArraySearchTool(unittest.TestCase):
         self.numSearch3 = numst.NumArraySearchTool(self.arr3)
         self.numSearch4 = numst.NumArraySearchTool(self.arr4)
         self.numSearch5 = numst.NumArraySearchTool(self.arr5)
+
 
     def tearDown(self):
         pass
@@ -45,8 +47,6 @@ class TestNumArraySearchTool(unittest.TestCase):
         self.assertEqual(self.numSearch3.searchTarget(5), -1)
         self.assertEqual(self.numSearch4.searchTarget(0), 0)
         self.assertEqual(self.numSearch5.searchTarget(2), 0)
-
-
 
 
 

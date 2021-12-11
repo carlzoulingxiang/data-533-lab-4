@@ -12,18 +12,31 @@ class NumArrayTools:
 
     def isnumerial(self):
         for i in self.arr:
-            if not isinstance(i, int):
-                return False
-        return True
+            try:
+                if not isinstance(i, int):
+                    raise ValueError("Invalid array")
+
+            except ValueError as ex:
+                print("Error:", ex)
+                raise ValueError
+            else:
+                return True
 
     def isnull(self):
-        if len(self.arr) == 0:
-            return True
+        try:
+            if len(self.arr) == 0:
+                raise ValueError("Empty array is not allowed")
+        except ValueError as ex:
+            print("Error:", ex)
+            raise ValueError
         else:
             return False
     
     def append(self, x):
-        if isinstance(x, int):
-            self.arr.append(x)
+        try:
+            if not isinstance(x, int):
+                raise ValueError("Only integers are allowed")
+        except ValueError as ex:
+            print("Error:", ex)
         else:
-            print("Please append a number")
+            self.arr.append(x)
