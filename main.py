@@ -48,8 +48,8 @@ if __name__ == '__main__':
     charSearchTool.append('t')
 
     # print the array
-    print("Sort tool array: ", charSortTool)
-    print("Search tool array: ", charSearchTool)
+    print("Sort tool array: ", charSortTool.arr)
+    print("Search tool array: ", charSearchTool.arr)
 
     # find the max char in array
     maxNum = charSearchTool.search_max()
@@ -74,15 +74,15 @@ if __name__ == '__main__':
 
     # sort array in ascending alphabetical order
     charSortTool.sort_asc()
-    print("The ascending sort tool array is: ", charSortTool)
+    print("The ascending sort tool array is: ", charSortTool.arr)
 
     # sort array in descending alphabetical order
     charSortTool.sort_desc()
-    print("The descending sort tool array is: ", charSortTool)
+    print("The descending sort tool array is: ", charSortTool.arr)
 
     # unsort this array
     charSortTool.unsort()
-    print("The unsorted sort tool array is: ", charSortTool)
+    print("The unsorted sort tool array is: ", charSortTool.arr)
 
 """
 The following are the outputs of the above test code:

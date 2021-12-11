@@ -6,20 +6,22 @@ Test class for chararraytools module.
 """
 import unittest
 
-from arraytools.chararraytools.chararraytools import CharArrayTools
+from arraytools.chararraytools.chararraytools import CharArrayTools, AppendIntegerError
 
 
 class TestCharArrayTools(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print("######## Start Testing The CharArrayTools Module ########")
+        pass
+        # print("######## Start Testing The CharArrayTools Module ########")
 
     @classmethod
     def tearDownClass(cls):
-        print("######## Finish Testing The CharArrayTools Module ########")
+        pass
+        # print("######## Finish Testing The CharArrayTools Module ########")
 
     def setUp(self):
-        print("Set Up: Initializing Object...")
+        # print("Set Up: Initializing Object...")
         self.t1 = CharArrayTools(['a', 'g', 'c', 'e', 'r', 'h'])
         self.t2 = CharArrayTools([])
         self.t3 = CharArrayTools(['r', 'r', 'e', 'p', 'h'])
@@ -27,7 +29,7 @@ class TestCharArrayTools(unittest.TestCase):
         self.t5 = CharArrayTools(['a', 'g', 'c', 1])
 
     def tearDown(self):
-        print("Tear Down: Deleting Object...")
+        # print("Tear Down: Deleting Object...")
         self.t1 = None
         self.t2 = None
         self.t3 = None
@@ -65,5 +67,18 @@ class TestCharArrayTools(unittest.TestCase):
         self.assertEqual(self.t3.arr, ['r', 'r', 'e', 'p', 'h', 'm'])
         self.assertEqual(self.t4.arr, ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'm'])
         self.assertEqual(self.t5.arr, ['a', 'g', 'c', 1, 'm'])
+
+        # test error handler
+        with self.assertRaises(AppendIntegerError):
+            self.t1.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t2.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t3.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t4.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t5.append(1)
+
 
         
