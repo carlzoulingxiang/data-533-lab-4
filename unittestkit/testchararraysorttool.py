@@ -20,7 +20,7 @@ class TestCharArraySortTool(unittest.TestCase):
 
     def setUp(self):
         print("Set Up: Initializing Object...")
-        self.t1 = CharArraySortTool(['a', 'g', 'c', 'e', 'r', 'h'])
+        self.t1 = CharArraySortTool(['a', 'g', 'c', 'e', 'r', 'h'], False)
         self.t2 = CharArraySortTool(['o'])
         self.t3 = CharArraySortTool(['r', 'r', 'e', 'p', 'h'])
         self.t4 = CharArraySortTool(['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'])
@@ -48,6 +48,12 @@ class TestCharArraySortTool(unittest.TestCase):
         self.assertEqual(self.t4.arr, ['e', 'i', 'o', 'p', 'q', 'r', 't', 'u', 'w', 'y'])
         self.assertEqual(self.t5.arr, ['a', 'a', 'a'])
 
+        self.assertTrue(self.t1.sorted)
+        self.assertTrue(self.t2.sorted)
+        self.assertTrue(self.t3.sorted)
+        self.assertTrue(self.t4.sorted)
+        self.assertTrue(self.t5.sorted)
+
     # test case 2
     # testing function sort_desc()
     def test_sort_desc(self):
@@ -61,6 +67,11 @@ class TestCharArraySortTool(unittest.TestCase):
         self.assertEqual(self.t3.arr, ['r', 'r', 'p', 'h', 'e'])
         self.assertEqual(self.t4.arr, ['y', 'w', 'u', 't', 'r', 'q', 'p', 'o', 'i', 'e'])
         self.assertEqual(self.t5.arr, ['a', 'a', 'a'])
+        self.assertTrue(self.t1.sorted)
+        self.assertTrue(self.t2.sorted)
+        self.assertTrue(self.t3.sorted)
+        self.assertTrue(self.t4.sorted)
+        self.assertTrue(self.t5.sorted)
 
     # test case 3
     # testing function unsort()
@@ -75,4 +86,11 @@ class TestCharArraySortTool(unittest.TestCase):
         self.assertEqual(self.t3.sorted, False)
         self.assertEqual(self.t4.sorted, False)
         self.assertEqual(self.t5.sorted, False)
+        self.assertFalse(self.t1.sorted)
+        self.assertFalse(self.t2.sorted)
+        self.assertFalse(self.t3.sorted)
+        self.assertFalse(self.t4.sorted)
+        self.assertFalse(self.t5.sorted)
+        self.t6 = CharArraySortTool(['a', 'b', 'c'], True)
+        self.t6.unsort()
 

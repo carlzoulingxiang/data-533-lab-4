@@ -47,8 +47,10 @@ class CharArrayTools(object):
             try:
                 raise AppendIntegerError(element)
             except AppendIntegerError as ae:
-                print("Error: Can not append integer to CharArrayTools!",ae.value)
-        self.arr.append(element)
+                print("Error: Can not append integer", str(ae), " to CharArrayTools!", ae.value)
+                raise AppendIntegerError(element)
+        else:
+            self.arr.append(element)
 
 
 class AppendIntegerError(Exception):

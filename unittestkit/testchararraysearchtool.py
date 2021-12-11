@@ -7,6 +7,7 @@ Test class for chararraysearchtool module.
 import unittest
 
 from arraytools.chararraytools.chararraysearchtool import CharArraySearchTool
+from arraytools.chararraytools.chararraysearchtool import NotCharError
 
 
 class TestCharArraySearchTool(unittest.TestCase):
@@ -42,6 +43,10 @@ class TestCharArraySearchTool(unittest.TestCase):
         self.assertEqual(self.t3.search_min(), 'e')
         self.assertEqual(self.t4.search_min(), 'e')
         self.assertEqual(self.t5.search_min(), 'a')
+        # test error handler
+        self.t6 = CharArraySearchTool([])
+        with self.assertRaises(ValueError):
+            self.t6.search_min()
 
     # test case 2
     # testing function search_max()
@@ -51,6 +56,10 @@ class TestCharArraySearchTool(unittest.TestCase):
         self.assertEqual(self.t3.search_max(), 'r')
         self.assertEqual(self.t4.search_max(), 'y')
         self.assertEqual(self.t5.search_max(), 'a')
+        # test error handler
+        self.t6 = CharArraySearchTool([])
+        with self.assertRaises(ValueError):
+            self.t6.search_max()
 
     # test case 3
     # testing function search_key()
@@ -60,4 +69,15 @@ class TestCharArraySearchTool(unittest.TestCase):
         self.assertEqual(self.t3.search_key('r'), 0)
         self.assertEqual(self.t4.search_key('t'), 4)
         self.assertEqual(self.t5.search_key('a'), 0)
+        # test error handler
+        with self.assertRaises(NotCharError):
+            self.t1.search_key(1)
+        with self.assertRaises(NotCharError):
+            self.t2.search_key(1)
+        with self.assertRaises(NotCharError):
+            self.t3.search_key(1)
+        with self.assertRaises(NotCharError):
+            self.t4.search_key(1)
+        with self.assertRaises(NotCharError):
+            self.t5.search_key(1)
 

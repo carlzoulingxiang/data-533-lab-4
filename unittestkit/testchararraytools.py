@@ -6,7 +6,7 @@ Test class for chararraytools module.
 """
 import unittest
 
-from arraytools.chararraytools.chararraytools import CharArrayTools
+from arraytools.chararraytools.chararraytools import CharArrayTools, AppendIntegerError
 
 
 class TestCharArrayTools(unittest.TestCase):
@@ -65,5 +65,18 @@ class TestCharArrayTools(unittest.TestCase):
         self.assertEqual(self.t3.arr, ['r', 'r', 'e', 'p', 'h', 'm'])
         self.assertEqual(self.t4.arr, ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'm'])
         self.assertEqual(self.t5.arr, ['a', 'g', 'c', 1, 'm'])
+
+        # test error handler
+        with self.assertRaises(AppendIntegerError):
+            self.t1.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t2.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t3.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t4.append(1)
+        with self.assertRaises(AppendIntegerError):
+            self.t5.append(1)
+
 
         

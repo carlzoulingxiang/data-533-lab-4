@@ -16,14 +16,14 @@ class CharArraySearchTool(CharArrayTools):
             return min(self.arr)
         except ValueError as ve:
             print("Error: Invalid array!")
-            return None
+            raise ValueError
 
     def search_max(self):
         try:
             return max(self.arr)
         except ValueError as ve:
             print("Error: Invalid array!")
-            return None
+            raise ValueError
 
     def search_key(self, target):
         """
@@ -35,7 +35,8 @@ class CharArraySearchTool(CharArrayTools):
             try:
                 raise NotCharError(target)  # user define error
             except NotCharError as ne:
-                print("Error: Target is not a character!", ne.value)
+                print("Error: Target(", str(ne), ") is not a character!", ne.value)
+                raise NotCharError(target)
         else:
             for i in range(0, len(self.arr)):
                 if self.arr[i] == target:
