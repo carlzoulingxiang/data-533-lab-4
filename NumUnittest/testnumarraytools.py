@@ -5,7 +5,7 @@ from arraytools.numarraytools import numarraytools as numtool
 class TestNumArrayTools(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        print('setup testNumArraySearchTool')
+        # print('setup testNumArraySearchTool')
         self.arr1 = [2, 3, 6, 1, 9, 4]
         self.arr2 = [0, 1, -1, 2, -2]
         self.arr3 = [-2, -3, -6, -1, -9, -4]
@@ -14,7 +14,8 @@ class TestNumArrayTools(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        print('teardown testNumArraySearchTool')
+        #print('teardown testNumArraySearchTool')
+        pass
 
     def setUp(self):
         self.numTool1 = numtool.NumArrayTools(self.arr1)

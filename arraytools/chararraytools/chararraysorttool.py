@@ -26,7 +26,7 @@ class CharArraySortTool(CharArrayTools):
                 if self.arr[j] > self.arr[j+1]:
                     self.arr[j], self.arr[j+1] = self.arr[j+1], self.arr[j]
         self.sorted = True
-        print("Sorted Array is: ", str(self))
+        # print("Sorted Array is: ", str(self))
 
     def sort_desc(self):
         """
@@ -36,7 +36,7 @@ class CharArraySortTool(CharArrayTools):
         self.sort_asc()
         self.arr = self.arr[len(self.arr)::-1]
         self.sorted = True
-        print("Sorted Array is: ", str(self))
+        # print("Sorted Array is: ", str(self))
 
     def unsort(self):
         """
@@ -46,7 +46,7 @@ class CharArraySortTool(CharArrayTools):
         if self.sorted:
             random.shuffle(self.arr)
             self.sorted = False
-        print("Unsorted Array is: ", str(self))
+        # print("Unsorted Array is: ", str(self))
 
 
 
