@@ -5,7 +5,7 @@ from arraytools.numarraytools import numarraysorttool as numsort
 class TestNumArraySortTool(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        print('setup testnumarraysorttool')
+        # print('setup testnumarraysorttool')
         self.arr1 = [2, 3, 6, 1, 9, 4]
         self.arr2 = [0, 1, -1, 2, -2]
         self.arr3 = [-2, -3, -6, -1, -9, -4]
@@ -14,7 +14,8 @@ class TestNumArraySortTool(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        print('teardown testnumarraysorttool')
+        pass
+        # print('teardown testnumarraysorttool')
 
     def setUp(self):
         self.numSort1 = numsort.NumArraySortTool(self.arr1)
