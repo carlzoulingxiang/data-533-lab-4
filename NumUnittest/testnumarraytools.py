@@ -23,6 +23,7 @@ class TestNumArrayTools(unittest.TestCase):
         self.numTool4 = numtool.NumArrayTools(self.arr4)
         self.numTool5 = numtool.NumArrayTools(self.arr5)
 
+
     def tearDown(self):
         pass
 
@@ -30,15 +31,18 @@ class TestNumArrayTools(unittest.TestCase):
         self.assertTrue(self.numTool1.isnumerial())
         self.assertTrue(self.numTool2.isnumerial())
         self.assertTrue(self.numTool3.isnumerial())
-        self.assertFalse(self.numTool4.isnumerial())
-        self.assertFalse(self.numTool4.isnumerial())
+        with self.assertRaises(ValueError):
+            self.numTool4.isnumerial()
+
+        self.assertFalse(self.numTool5.isnumerial())
 
     def test_isnull(self):
         self.assertFalse(self.numTool1.isnull())
         self.assertFalse(self.numTool2.isnull())
         self.assertFalse(self.numTool3.isnull())
         self.assertFalse(self.numTool4.isnull())
-        self.assertTrue(self.numTool5.isnull())
+        with self.assertRaises(ValueError):
+            self.numTool5.isnull()
 
     def test_append(self):
         self.numTool1.append(100)
@@ -50,7 +54,5 @@ class TestNumArrayTools(unittest.TestCase):
         self.numTool4.append(100)
         self.assertEqual(self.numTool4.arr, ["a", "b", "c", 2, 5, 100])
         self.numTool5.append("a")
-        self.assertEqual(self.numTool5.arr, [])
-
 
 
